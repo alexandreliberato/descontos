@@ -31,12 +31,12 @@ Podemos fazer isso usando Docker Compose:
 - buildar imagens:
 
 Serviços 01:
-``$ cd ds1``
+``$ cd ds1``  
+``$ ./build-service-02.sh``  
 ``$ ./docker-build.sh``  
-``$ ./build-service-02.sh``
 
 Serviços 02:
-``$ cd ds2``
+``$ cd ds2``  
 ``$ ./docker-build.sh``
 
 E rodar na raiz do repositório:
