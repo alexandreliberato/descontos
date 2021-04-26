@@ -36,7 +36,7 @@ Serviços 01:
 ``$ ./build-service-02.sh``
 
 Serviços 02:
-`´$ cd ds2``
+``$ cd ds2``
 ``$ ./docker-build.sh``
 
 E rodar na raiz do repositório:
