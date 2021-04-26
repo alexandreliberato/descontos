@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option go_package = "alexandreliberato.dev/descontos";
+option java_package = "infra.grpc";
+option java_multiple_files = true;
+
+// Interface exported by the server.
+service DiscountCalculator {
+  rpc GetDiscount(Param) returns (Discount) {}
+}
+
+message Param {
+  string idUser = 1;
+  string idProduct = 2;
+}
+
+message Discount {
+  float percentage = 1;
+  int32 valueInCents = 2;
+}

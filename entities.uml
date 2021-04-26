@@ -1,0 +1,31 @@
+@startuml
+    entity "User" as usu {
+        *id: uuid
+        *first_name: text
+        *last_name: text
+        *date_of_birth: time
+    }
+
+    entity "Product" as prd {
+        *id: uuid
+        *price_in_cents: int64
+        *title: text
+        *description : text
+        discount: efemeral
+    }
+
+    entity "Discount" as dsc {
+        *percentage: float
+        *value_in_cents: int64
+    }
+
+    entity "DateDiscountRule" as ddr {
+        *id: uuid
+        *title: text
+        *percentage: float
+        *date: time
+        *limit: float
+    }
+
+    prd ||..|| dsc
+@enduml

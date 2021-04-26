@@ -1,0 +1,37 @@
+@startuml
+    actor App as app
+    participant Servico2 as ds2
+    participant Servico1 as ds1
+    database BD as bd
+
+    app -> ds2: http(GET): /product [x-user-id]
+        ds2 -> bd: buscaUsuario()
+        break usuario == null
+            ds2 --> app: UsuarioNaoEncontradoError
+            ref over app, ds2: breakFlow
+        end
+        ds2 -> bd: listaProdutos()
+        bd --> ds2: []produtos
+        loop produtos
+            group timeout 3000ms
+                ds2 -> ds1: calculaDesconto(idUsuario, idProduto)
+
+                ds1 -> bd: recuperaRegras()
+                bd --> ds1: []regras
+
+                ds1 -> bd: recuperaUsuario(idUsuario)
+                bd --> ds1: usuario
+
+                ds1 -> bd: recuperaProduto(idProduto)
+                bd --> ds1: produto
+
+                ds1 -> ds1: calculaDesconto()
+
+                ds1 --> ds2: desconto{}
+            end
+            alt sem erro 
+                ds2->ds2: aplicaDesconto()
+            end
+        end
+    ds2 --> app: []produtos{}
+@enduml

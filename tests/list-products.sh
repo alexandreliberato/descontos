@@ -1,0 +1,1 @@
+curl -H "X-USER-ID: 235a6935-3852-4914-998e-dad7e52ed3ae" http://localhost:7000/produtos 
