@@ -32,11 +32,11 @@ Podemos fazer isso usando Docker Compose:
 
 Serviços 01:
 ``$ cd ds1``  
-``$ ./build-service-02.sh``  
 ``$ ./docker-build.sh``  
 
 Serviços 02:
 ``$ cd ds2``  
+``$ ./build-service-02.sh``  
 ``$ ./docker-build.sh``
 
 E rodar na raiz do repositório:
