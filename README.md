@@ -46,9 +46,9 @@ E rodar na raiz do repositório:
 Após os serviços estarem rodando você pode testar com dados que já estão na base, alterando as datas para
 coincidirem com a de hoje (caso queira desconto) e então usar o script:
 
-``$ ./tests/list-products.sh``
+``$ ./tests/list-products.sh``  
 Caso necessário criar/consultar dados para teste pode ser feito através de conexão com a base de dados
-ou resetar a base e inserir novos dados no /sql.
+ou resetar (reset-db.sh) a base e inserir novos dados no /sql.
 
 ## Design
 Pode ser utilizado alguma leitor de Plantuml para ender os arquivos .uml.
