@@ -1,11 +1,11 @@
-# Serviço 01
+# Serviço 01 (ds1)
 O projeto foi criado usando a seguinte stack:
  - Golang
  - gRPC
  - pgx para conexão com base de dados Postgres
  - Postgres
 
-# Serviço 02
+# Serviço 02 (ds2)
 O projeto foi criado usando a seguinte stack:
 
  - Maven
@@ -26,20 +26,20 @@ Para executar o sistema completo é necessário estar com os seguintes recursos 
 - Serviço 01 - Go
 - Serviço 02 - Kotlin
 
-Podemos fazer isso usando:
+Podemos fazer isso usando Docker Compose:
 
-## Docker Compose
-
-Buildar imagens:
+- buildar imagens:
 
 Serviços 01:
-``$ ./ds1/docker-build.sh``
-``$ ./ds1/build-service-02.sh``
+``$ cd ds1``
+``$ ./docker-build.sh``  
+``$ ./build-service-02.sh``
 
 Serviços 02:
-``$ ./ds2/docker-build.sh``
+`´$ cd ds2``
+``$ ./docker-build.sh``
 
-E rodar na raiz:
+E rodar na raiz do repositório:
 ``$ ./run.sh``
 
 # Como testar
